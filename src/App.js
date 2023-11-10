@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { Routes, Route } from "react-router-dom";
+import Login from "./components/login/Login";
+import Home from "./components/home/Home";
+import PrivateRoutes from "./utils/PrivateRoutes";
+import Courses from "./components/courses/Courses";
+import Profile from "./components/home/Profile";
+import SignUp from "./components/login/SignUp";
+import CourseDetails from "./components/courses/CourseDetails";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className=" font-mono">
+      <Routes>
+        <Route element={<PrivateRoutes />}>
+          <Route path="/courses" element={<Courses />} exact />
+          <Route path="/profile" element={<Profile />} exact />
+          <Route path="/courses/:id" element={<CourseDetails />} exact />
+        </Route>
+        <Route path="/login" element={<Login />} exact />
+        <Route path="/signup" element={<SignUp />} exact />
+        <Route path="/" element={<Home />} exact />
+      </Routes>
     </div>
   );
 }
