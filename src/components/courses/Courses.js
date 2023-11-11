@@ -64,7 +64,7 @@ const Courses = () => {
       <Header />
       <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-[90vh] flex flex-col  items-center">
         <div className=" flex flex-col  md:flex md:flex-row items-center gap-5 my-5">
-          <h1 className="text-black text-2xl md:text-[35px] font-bold">
+          <h1 className="text-black text-[20px] md:text-[35px] font-bold">
             List Of Available Courses
           </h1>
           <div className=" flex flex-col md:flex gap-2 items-center">
